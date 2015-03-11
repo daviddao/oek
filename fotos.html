@@ -70,10 +70,10 @@
 											<header>
 												<h3>Fotoalbum</h3>
 											</header>
-											<h4>Images</h4>
+											<p>Hier werden später alle Fotos im internen Ordner "Fotoalbum" angezeigt...</p>
 											<script>
-var dir = "images/";
-var fileextension = ".png";
+var dir = "fotoalbum/";
+var fileextension = ".JPG";
 $.ajax({
     //This will retrieve the contents of the folder if the folder is configured as 'browsable'
     url: dir,
@@ -81,7 +81,7 @@ $.ajax({
         //Lsit all png file names in the page
         $(data).find("a:contains(" + fileextension + ")").each(function () {
             var filename = this.href.replace(window.location.host, "").replace("http:///", "");
-            $("#pics").append($("<img src=" + dir + filename + " style='width:50%'></img>"));
+            $("#pics").append($("<img src=" + dir + filename + " style='width:30%'></img>"));
         });
     }
 });
